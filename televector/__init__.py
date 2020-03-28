@@ -1,2 +1,2 @@
-from televector import displays
-from televector import shapes
+from . import displays
+from . import visibles

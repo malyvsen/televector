@@ -8,8 +8,8 @@ class PWMDisplay(Display):
         super().__init__(point_rate, refresh_rate)
         self.pins = [PWMLED(pin, initial_value=.5, frequency=pwm_rate) for pin in pins]
     
-    def display(self, shape, duration):
-        points = self.render(shape, duration)
+    def display(self, visible, duration):
+        points = self.render(visible, duration)
         points = (points + 1) / 2 # translate to PWM coordinates
         for x, y in zip(points[0], points[1]):
             self.pins[0].value = x
