@@ -10,7 +10,7 @@ class Display:
         raise NotImplementedError('Should display the visible')
 
     def render(self, visible, duration):
-        refresh_count = int(np.ceil(duration * self.refresh_rate))
-        points_per_refresh = int(np.ceil(self.point_rate / self.refresh_rate))
-        points = visible.render(points_per_refresh, refresh_count)
+        num_frames = int(np.ceil(duration * self.refresh_rate))
+        frame_length = int(np.ceil(self.point_rate / self.refresh_rate))
+        points = visible.render(frame_length=frame_length, num_frames=num_frames)
         return points
