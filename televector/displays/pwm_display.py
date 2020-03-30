@@ -1,9 +1,9 @@
 from gpiozero import PWMLED
 from time import sleep
-from .display import Display
+from .realtime_display import RealtimeDisplay
 
 
-class PWMDisplay(Display):
+class PWMDisplay(RealtimeDisplay):
     def __init__(self, pins, pwm_rate=1e6, point_rate=16000, refresh_rate=60):
         super().__init__(point_rate, refresh_rate)
         self.pins = [PWMLED(pin, initial_value=.5, frequency=pwm_rate) for pin in pins]

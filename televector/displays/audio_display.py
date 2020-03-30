@@ -1,8 +1,8 @@
 from IPython.display import Audio
-from .display import Display
+from .realtime_display import RealtimeDisplay
 
 
-class AudioDisplay(Display):
+class AudioDisplay(RealtimeDisplay):
     def __init__(self, point_rate=16000, refresh_rate=60):
         super().__init__(point_rate, refresh_rate)
     
