@@ -1,3 +1,4 @@
+from .compose import Compose
 from .integrate import Integrate
 
 from .rotate import Rotate
